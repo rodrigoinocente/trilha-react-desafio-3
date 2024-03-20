@@ -1,9 +1,10 @@
-import { useNavigate  } from "react-router-dom";
+import { useNavigate, Link  } from "react-router-dom";
 import { MdEmail, MdLock } from 'react-icons/md'
 import { Button } from '../../components/Button';
 import { Header } from '../../components/Header';
 import { Input } from '../../components/Input';
 import { api } from '../../services/api';
+
 
 import { useForm } from "react-hook-form";
 
@@ -30,7 +31,7 @@ const Login = () => {
 
             alert('Usuário ou senha inválido')
         }catch(e){
-            //TODO: HOUVE UM ERRO
+            alert('Houve um erro. Tente novamente')
         }
     };
 
@@ -56,7 +57,9 @@ const Login = () => {
                 </form>
                 <Row>
                     <EsqueciText>Esqueci minha senha</EsqueciText>
+                    <Link to="/register">
                     <CriarText>Criar Conta</CriarText>
+                    </Link>
                 </Row>
                 </Wrapper>
             </Column>
